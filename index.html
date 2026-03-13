@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NYC Taxi Advertising | Taxi Wrap Advertising New York</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Calibri,sans-serif;background:#f9fafb;color:#1f2937;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:auto;padding:20px}
+
+/* HEADER */
+header{background:#fff;box-shadow:0 5px 20px rgba(0,0,0,0.08);position:sticky;top:0;z-index:999}
+.nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:12px 0;gap:10px}
+.nav-left a{font-weight:600;font-size:15px;color:#2563EB}
+.nav-center{display:flex;gap:5px;flex-wrap:wrap}
+.nav-center button{background:none;border:none;cursor:pointer;font-family:Calibri;font-size:15px;font-weight:600;color:#1f2937;padding:8px 16px;border-radius:25px;transition:all .25s}
+.nav-center button:hover,.nav-center button.active{background:linear-gradient(45deg,#2563EB,#10B981);color:#fff}
+.nav-right{display:flex;align-items:center;gap:10px}
+.logo{height:40px;border-radius:6px}
+.btn{background:linear-gradient(45deg,#2563EB,#10B981);color:#fff;padding:10px 20px;border-radius:30px;font-weight:600;font-size:14px;cursor:pointer;border:none;font-family:Calibri}
+.btn:hover{opacity:.9}
+
+/* PAGE SYSTEM */
+.page{display:none;animation:fadeIn .35s ease}
+.page.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* HERO */
+.hero{padding:120px 20px;text-align:center;color:#fff;background:linear-gradient(rgba(37,99,235,.88),rgba(16,185,129,.88)),url("https://images.unsplash.com/photo-1517949908114-71669a64cce0") center/cover}
+.hero h1{font-size:44px;margin-bottom:15px}
+.hero p{max-width:800px;margin:12px auto;font-size:17px;opacity:.95}
+.hero-btns{margin-top:35px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+.hero-btn{padding:14px 30px;border-radius:30px;font-weight:600;font-size:16px;cursor:pointer;font-family:Calibri;border:none}
+.btn-green{background:#10B981;color:#fff}
+.btn-outline{background:transparent;border:2px solid #fff;color:#fff}
+.hero-stats{display:flex;justify-content:center;gap:55px;flex-wrap:wrap;margin-top:60px}
+.hero-stats h3{font-size:32px}
+.hero-stats p{font-size:14px;opacity:.9}
+
+/* CARDS */
+.section{padding:60px 20px}
+.section h2{font-size:30px;margin-bottom:10px}
+.section>p,.section .container>p{font-size:16px;color:#4b5563;margin-bottom:30px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;margin-top:30px}
+.card{background:#fff;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.08);overflow:hidden;transition:transform .2s}
+.card:hover{transform:translateY(-5px)}
+.card img{width:100%;height:200px;object-fit:cover}
+.card-content{padding:22px}
+.card-content h3{margin-bottom:10px;font-size:19px}
+.card-content p{font-size:15px;color:#4b5563}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:40px}
+.about-grid img{width:100%;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.1)}
+.about-grid h2{font-size:28px;margin-bottom:15px}
+.about-grid p{font-size:15px;color:#4b5563;margin-bottom:12px}
+.mini-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:40px}
+.mini-card{background:#fff;padding:22px;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.07)}
+.mini-card h3{margin-bottom:8px;color:#2563EB}
+
+/* FAQ */
+.faq{margin-top:60px}
+.faq h2{text-align:center;font-size:28px;margin-bottom:25px}
+.faq-item{background:#fff;border-radius:10px;margin-bottom:12px;box-shadow:0 5px 15px rgba(0,0,0,.05);overflow:hidden}
+.faq-q{padding:18px 20px;cursor:pointer;font-weight:600;font-size:16px;display:flex;justify-content:space-between;align-items:center}
+.faq-q span{font-size:20px;color:#2563EB;transition:transform .2s}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s}
+.faq-item.open .faq-a{max-height:200px;padding:0 20px 18px}
+.faq-item.open .faq-q span{transform:rotate(45deg)}
+
+/* SERVICES PAGE */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:28px;margin-top:30px}
+.svc-card{background:#fff;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.08);overflow:hidden;transition:transform .2s}
+.svc-card:hover{transform:translateY(-5px)}
+.svc-card img{width:100%;height:210px;object-fit:cover}
+.svc-content{padding:22px}
+.svc-content h3{margin-bottom:10px;font-size:19px}
+.svc-content p{font-size:15px;color:#4b5563;margin-bottom:18px}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:30px}
+.contact-info h3{font-size:20px;margin-bottom:15px;color:#2563EB}
+.contact-info p{margin-bottom:10px;font-size:15px}
+.contact-info strong{color:#1f2937}
+.map-wrap{margin-top:20px;border-radius:12px;overflow:hidden}
+.contact-form input,.contact-form textarea{width:100%;padding:13px 15px;border-radius:10px;border:1.5px solid #e5e7eb;margin-bottom:14px;font-family:Calibri;font-size:15px;transition:border .2s}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:#2563EB}
+.contact-form h3{font-size:20px;margin-bottom:20px;color:#2563EB}
+
+/* HERO PAGE SWITCH BUTTONS */
+.hero-btn.btn-outline:hover{background:rgba(255,255,255,.15)}
+
+/* FOOTER */
+footer{background:#111827;color:#fff;padding:50px 20px;margin-top:0}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:30px}
+footer h3{margin-bottom:12px;font-size:17px}
+footer p{font-size:14px;color:#9ca3af;margin-bottom:6px}
+footer a{color:#9ca3af;font-size:14px}
+footer a:hover{color:#fff}
+.footer-logo{height:40px;border-radius:6px;margin-top:10px}
+.footer-bottom{text-align:center;color:#6b7280;font-size:13px;padding-top:30px;border-top:1px solid #374151;margin-top:30px}
+
+/* FLOAT CALL BTN */
+.float-call{position:fixed;bottom:22px;right:22px;background:linear-gradient(45deg,#2563EB,#10B981);padding:17px;border-radius:50%;font-size:22px;box-shadow:0 5px 20px rgba(37,99,235,.4);z-index:998;transition:transform .2s}
+.float-call:hover{transform:scale(1.1)}
+
+/* PAGE HERO SMALL */
+.page-hero{padding:80px 20px;background:linear-gradient(120deg,#2563EB,#10B981);color:#fff;text-align:center}
+.page-hero h1{font-size:38px;margin-bottom:12px}
+.page-hero p{max-width:700px;margin:auto;font-size:16px;opacity:.95}
+
+@media(max-width:768px){
+  .hero h1{font-size:28px}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .nav-center button{padding:7px 11px;font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+<div class="container nav">
+  <div class="nav-left">
+    <a href="tel:+12124708129">📞 212-470-8129</a>
+  </div>
+  <div class="nav-center">
+    <button class="active" onclick="showPage('home',this)">Home</button>
+    <button onclick="showPage('about',this)">About</button>
+    <button onclick="showPage('services',this)">Services</button>
+    <button onclick="showPage('contact',this)">Contact</button>
+  </div>
+  <div class="nav-right">
+    <img src="https://s.floomby.com/uploads/s/130326/XaIAETC1.jpg?download=1&name=Screenshot-13-03-2026%2006:08:22.jpg" class="logo" alt="NYC Taxi Advertising Logo">
+    <strong style="font-size:15px">NYC Taxi Advertising</strong>
+    <button class="btn" onclick="showPage('contact', document.querySelector('.nav-center button:last-child'))">Book Appointment</button>
+  </div>
+</div>
+</header>
+
+<!-- ===== HOME PAGE ===== -->
+<div class="page active" id="page-home">
+
+  <section class="hero">
+    <div class="container">
+      <h1>New York City's Premier Taxi Advertising Agency</h1>
+      <p>NYC Taxi Advertising helps businesses reach thousands of potential customers every day using powerful taxi advertising campaigns across Manhattan, Brooklyn, Queens and the greater New York City area.</p>
+      <p>Our taxi wrap advertising, mobile billboard campaigns and in taxi advertising solutions provide strong brand exposure in busy streets, tourist areas and high traffic locations.</p>
+      <div class="hero-btns">
+        <button class="hero-btn btn-green" onclick="showPage('services', document.querySelectorAll('.nav-center button')[2])">View Services</button>
+        <button class="hero-btn btn-outline" onclick="showPage('contact', document.querySelectorAll('.nav-center button')[3])">Free Consultation</button>
+      </div>
+      <div class="hero-stats">
+        <div><h3>55+</h3><p>Years Experience</p></div>
+        <div><h3>1000+</h3><p>Advertising Campaigns</p></div>
+        <div><h3>FREE</h3><p>Campaign Consultation</p></div>
+        <div><h3>5-Star</h3><p>Rated Agency</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Our Taxi Advertising Services</h2>
+      <p>We offer multiple outdoor advertising solutions that help brands grow visibility across New York City. Our moving advertisements travel through busy streets every day reaching thousands of people.</p>
+      <div class="cards">
+        <div class="card">
+          <img src="https://images.squarespace-cdn.com/content/v1/64ac54b3916e33001d98eb5e/d10722bf-495b-4734-8c18-8d8cf81d259e/Real+ID+POP+002.jpg" alt="Taxi Wrap Advertising">
+          <div class="card-content">
+            <h3>Taxi Wrap Advertising</h3>
+            <p>Taxi wrap advertising transforms NYC taxis into powerful moving billboards that promote your brand across Manhattan and surrounding boroughs every day.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.squarespace-cdn.com/content/v1/64ac54b3916e33001d98eb5e/1742744272035-EENA9WGXSI4N2LMSE2H1/Cirque++Full+Run+V21+POP++00018.JPG" alt="Mobile Billboard">
+          <div class="card-content">
+            <h3>Mobile Billboard Advertising</h3>
+            <p>Mobile billboard trucks deliver large high impact advertising displays that move through busy NYC streets reaching wide audiences in popular districts.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.squarespace-cdn.com/content/v1/64ac54b3916e33001d98eb5e/1743399411515-T9R37ZJVOC589LDWS2G6/Lucky+Brand+POP++00007.JPG" alt="In Taxi Advertising">
+          <div class="card-content">
+            <h3>In Taxi Advertising</h3>
+            <p>In taxi advertising allows brands to connect directly with passengers during their ride with digital screens and interior displays across New York City.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US STRIP -->
+  <section style="background:linear-gradient(120deg,#2563EB,#10B981);padding:50px 20px;text-align:center;color:#fff">
+    <div class="container">
+      <h2 style="font-size:28px;margin-bottom:12px">Why Choose NYC Taxi Advertising?</h2>
+      <p style="opacity:.9;max-width:650px;margin:auto;margin-bottom:30px">We deliver proven results for brands of all sizes using strategic outdoor advertising across New York City's most trafficked streets.</p>
+      <button class="btn" style="font-size:16px;padding:14px 32px" onclick="showPage('contact', document.querySelectorAll('.nav-center button')[3])">Start Your Campaign Today</button>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== ABOUT PAGE ===== -->
+<div class="page" id="page-about">
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>About NYC Taxi Advertising</h1>
+      <p>NYC Taxi Advertising helps businesses grow using powerful taxi advertising, mobile billboards and out of home advertising across Manhattan and New York City.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <h2>High Visibility Advertising Across New York</h2>
+          <p>NYC Taxi Advertising is a leading advertising agency specializing in taxi wrap advertising and mobile billboard campaigns across Manhattan and NYC. Our mission is to help businesses gain maximum brand exposure in one of the busiest cities in the world.</p>
+          <p>Taxi advertising provides unmatched visibility because thousands of people see taxis every day. From Times Square to downtown Manhattan our campaigns place your brand directly in front of commuters, pedestrians and tourists.</p>
+          <p>Our experienced advertising team focuses on strategic campaign placement, high quality designs and impactful branding that helps companies grow their customer base.</p>
+          <button class="btn" style="margin-top:10px" onclick="showPage('contact', document.querySelectorAll('.nav-center button')[3])">Get Free Consultation</button>
+        </div>
+        <div>
+          <img src="https://images.squarespace-cdn.com/content/v1/64ac54b3916e33001d98eb5e/f62ad089-94c9-4bca-8806-413b217f14bc/ASOT+Pop.png" alt="About NYC Taxi Advertising">
+        </div>
+      </div>
+      <div class="mini-cards">
+        <div class="mini-card"><h3>Taxi Wrap Advertising</h3><p>Transform taxis into powerful moving billboards across New York City.</p></div>
+        <div class="mini-card"><h3>Mobile Billboard Campaigns</h3><p>Reach thousands of people daily with strategic mobile advertising routes.</p></div>
+        <div class="mini-card"><h3>High Visibility Branding</h3><p>Increase brand awareness with eye catching taxi media campaigns.</p></div>
+        <div class="mini-card"><h3>Trusted NYC Agency</h3><p>Businesses across Manhattan trust our expertise for impactful campaigns.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-q">What is taxi advertising? <span>+</span></div>
+        <div class="faq-a">Taxi advertising places your brand on taxis that travel throughout New York City reaching thousands of potential customers every day.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How effective is taxi wrap advertising? <span>+</span></div>
+        <div class="faq-a">Taxi wrap campaigns deliver high visibility advertising because taxis move through busy streets across Manhattan and NYC reaching commuters, tourists and pedestrians.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How long do advertising campaigns run? <span>+</span></div>
+        <div class="faq-a">Campaigns can run for several weeks or months depending on your marketing strategy and budget. We offer flexible packages for all business sizes.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can small businesses use taxi advertising? <span>+</span></div>
+        <div class="faq-a">Yes. Taxi advertising works for businesses of all sizes looking to increase visibility in New York. We customize campaigns to fit your budget.</div>
+      </div>
+    </div>
+  </section>
+  <div style="margin-bottom:60px"></div>
+
+</div>
+
+<!-- ===== SERVICES PAGE ===== -->
+<div class="page" id="page-services">
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Taxi Advertising Services in NYC</h1>
+      <p>NYC Taxi Advertising offers multiple high visibility advertising solutions designed to help businesses reach audiences across Manhattan and New York City.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Our Advertising Services</h2>
+      <p>Choose from our range of powerful outdoor advertising formats to maximize your brand's visibility across New York City.</p>
+      <div class="services-grid">
+        <div class="svc-card">
+          <img src="https://images.squarespace-cdn.com/content/v1/64ac54b3916e33001d98eb5e/1746639145597-ZBIJC0GQ7VXFP4GGDSZK/Cirque++Full+Run+V2+POP++00002.JPG" alt="Taxi Wrap">
+          <div class="svc-content">
+            <h3>Taxi Wrap Advertising</h3>
+            <p>Taxi wrap advertising turns taxis into moving billboards that travel across busy streets in Manhattan and throughout NYC creating strong visual exposure with thousands of daily impressions.</p>
+            <button class="btn" onclick="showPage('contact', document.querySelectorAll('.nav-center button')[3])">Start Campaign</button>
+          </div>
+        </div>
+        <div class="svc-card">
+          <img src="https://images.squarespace-cdn.com/content/v1/64ac54b3916e33001d98eb5e/1745412688789-E0N3QRUN25FZA59FEFAE/Thumb.jpg" alt="Mobile Billboard">
+          <div class="svc-content">
+            <h3>Mobile Billboards</h3>
+            <p>Mobile billboard advertising places large advertisements on vehicles that travel through popular locations allowing brands to reach audiences across multiple neighborhoods in a single campaign.</p>
+            <button class="btn" onclick="showPage('contact', document.querySelectorAll('.nav-center button')[3])">Start Campaign</button>
+          </div>
+        </div>
+        <div class="svc-card">
+          <img src="https://images.squarespace-cdn.com/content/v1/64ac54b3916e33001d98eb5e/1744612382752-F4ADUAI252ZP2JCBLMBX/Trippie+01.png" alt="In Taxi Advertising">
+          <div class="svc-content">
+            <h3>In Taxi Advertising</h3>
+            <p>In taxi advertising allows businesses to connect with passengers directly during their ride experience. Interior placements and digital displays provide engaging advertising opportunities.</p>
+            <button class="btn" onclick="showPage('contact', document.querySelectorAll('.nav-center button')[3])">Start Campaign</button>
+          </div>
+        </div>
+        <div class="svc-card">
+          <img src="https://images.squarespace-cdn.com/content/v1/64ac54b3916e33001d98eb5e/0494b479-0e0e-41d0-88d3-ca87e8204c8d/207DE9F0-4E45-4C1D-BCBD-ECD6E4E858BC.jpg" alt="Digital Taxi Advertising">
+          <div class="svc-content">
+            <h3>Taxi Digital Advertising</h3>
+            <p>Taxi digital advertising uses modern display screens to deliver engaging advertisements across NYC. Ideal for brands looking for dynamic and high visibility campaigns.</p>
+            <button class="btn" onclick="showPage('contact', document.querySelectorAll('.nav-center button')[3])">Start Campaign</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== CONTACT PAGE ===== -->
+<div class="page" id="page-contact">
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Contact NYC Taxi Advertising</h1>
+      <p>Businesses looking for high visibility advertising campaigns in New York can contact us to start a professional taxi media campaign today.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Start Your Advertising Campaign</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Get In Touch</h3>
+          <p>NYC Taxi Advertising helps businesses promote their brand using taxi wrap advertising, mobile billboards and digital taxi media throughout Manhattan and NYC.</p>
+          <p>If you are looking for an effective advertising agency in New York our team can help you design a campaign that maximizes brand exposure.</p>
+          <p><strong>Address:</strong> 242 W 30th St 3rd Floor, Ste 303<br>New York NY 10001 USA</p>
+          <p><strong>Phone:</strong> <a href="tel:+12124708129" style="color:#2563EB;font-weight:600">212-470-8129</a></p>
+          <p><strong>Website:</strong> <a href="https://www.nytaxiads.com" style="color:#2563EB" target="_blank">www.nytaxiads.com</a></p>
+          <div class="map-wrap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.58893560229!2d-73.99459829999999!3d40.7490698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c28af222ea784d%3A0xdd24b11befb1554e!2sNYC%20Taxi%20Advertising!5e0!3m2!1sen!2s!4v1773382204304!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Send Us a Message</h3>
+          <input type="text" placeholder="Your Name">
+          <input type="email" placeholder="Email Address">
+          <input type="tel" placeholder="Phone Number">
+          <input type="text" placeholder="Company Name">
+          <textarea rows="5" placeholder="Tell us about your advertising needs..."></textarea>
+          <button class="btn" style="width:100%;padding:14px;font-size:16px" onclick="handleSubmit(this)">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h3>NYC Taxi Advertising</h3>
+      <p>Professional taxi media and mobile billboard advertising campaigns across New York City helping brands gain maximum visibility.</p>
+      <img src="https://s.floomby.com/uploads/s/130326/XaIAETC1.jpg?download=1&name=Screenshot-13-03-2026%2006:08:22.jpg" class="footer-logo" alt="Logo">
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <p><a href="#" onclick="showPage('home',document.querySelectorAll('.nav-center button')[0])">Home</a></p>
+      <p><a href="#" onclick="showPage('about',document.querySelectorAll('.nav-center button')[1])">About</a></p>
+      <p><a href="#" onclick="showPage('services',document.querySelectorAll('.nav-center button')[2])">Services</a></p>
+      <p><a href="#" onclick="showPage('contact',document.querySelectorAll('.nav-center button')[3])">Contact</a></p>
+    </div>
+    <div>
+      <h3>Our Services</h3>
+      <p>Taxi Wrap Advertising</p>
+      <p>Mobile Billboards</p>
+      <p>In Taxi Advertising</p>
+      <p>Digital Taxi Media</p>
+    </div>
+    <div>
+      <h3>Contact Us</h3>
+      <p>242 W 30th St 3rd Floor</p>
+      <p>New York NY 10001</p>
+      <p><a href="tel:+12124708129">212-470-8129</a></p>
+      <p><a href="https://www.nytaxiads.com" target="_blank">www.nytaxiads.com</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <p>© 2026 NYC Taxi Advertising. All rights reserved.</p>
+  </div>
+</footer>
+
+<a href="tel:+12124708129" class="float-call" title="Call Us">📞</a>
+
+<script>
+function showPage(id, btn){
+  // hide all pages
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  // show target
+  document.getElementById('page-'+id).classList.add('active');
+  // update nav buttons
+  document.querySelectorAll('.nav-center button').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  // scroll to top
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// FAQ toggle
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item = q.parentElement;
+    item.classList.toggle('open');
+  });
+});
+
+// Contact form
+function handleSubmit(btn){
+  btn.textContent = '✓ Message Sent!';
+  btn.style.background = '#10B981';
+  setTimeout(()=>{
+    btn.textContent = 'Send Message';
+    btn.style.background = '';
+  }, 3000);
+}
+</script>
+</body>
+</html>
